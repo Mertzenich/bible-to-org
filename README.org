@@ -1,3 +1,7 @@
+* bible-to-org
+
+This is a fork of sword-to-org by alphapapa (original readme below this) made for my [[https://github.com/Mertzenich/bible.org][bible.org]] project. This has a slightly modified sword-to-org-insert-outline function which uses a (hardcoded, for now) substring to get the current buffer file name as well as create a better formatted org file.
+
 * sword-to-org
 
 This package uses [[https://crosswire.org/wiki/Frontends:Diatheke][=diatheke=]] to convert Sword modules to Org-mode outlines.  For example, you can make an Org file containing the entire text of the ESV module as an outline structured by book/chapter/verse.  Then you can add top-level headings for Old/New Testaments, and then you have the whole Bible as an Org file.  Then you can do everything you can do in Org with the text of the Bible!  Add footnotes, links, tags, properties, write your own commentaries under subheadings, organize research with TODO items, export with =org-export=, search with =helm-org-rifle=, etc.  The list is endless.
@@ -29,7 +33,7 @@ By including this code in your Org file, you can easily insert passages when exp
     (concat "#+BEGIN_QUOTE" "\n"
             (sword-to-org--passage ref :paragraph (s-present? paragraph))
             (when (s-present? paragraph)
-              (concat "  (" ref ")")) "\n" 
+              (concat "  (" ref ")")) "\n"
             "#+END_QUOTE" "\n")
   ,#+END_SRC
 #+END_SRC
@@ -70,7 +74,7 @@ Contributions are welcome!
 
 *** Ideas
 
-**** MAYBE Rename, expand 
+**** MAYBE Rename, expand
 
 Might want to rename to, say, =org-sword=, and add commands to search =diatheke= for keywords, etc.
 

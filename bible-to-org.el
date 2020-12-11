@@ -85,7 +85,7 @@ it was active."
                              (not sword-to-org-default-module))
                          (completing-read "Module: " (sword-to-org--diatheke-get-modules))
                        sword-to-org-default-module)
-                     (read-from-minibuffer "Passage: ")))
+                     (substring (buffer-file-name) 44 -4)))
   (let ((was-org-mode (eq major-mode 'org-mode)))
     (when was-org-mode
       (text-mode))
@@ -94,14 +94,14 @@ it was active."
              for passage in (sword-to-org--diatheke-parse-text
                              (sword-to-org--diatheke-get-text module key))
              do (-let (((&plist :book book :chapter chapter :verse verse :text text) passage))
-                  (unless (equal book last-book)
-                    (insert (format "** %s\n\n" book))
-                    (setq last-chapter nil)
-                    (setq last-book book))
+                  ;; (unless (equal book last-book)
+                  ;;   (insert (format "%s\n\n" book))
+                  ;;   (setq last-chapter nil)
+                  ;;   (setq last-book book))
                   (unless (equal chapter last-chapter)
-                    (insert (format "*** %s %s\n\n" book chapter))
+                    (insert (format "* %s %s\n\n" book chapter))
                     (setq last-chapter chapter))
-                  (insert (format "**** %s %s:%s\n\n%s\n\n" book chapter verse text))))
+                  (insert (format "** %s %s:%s\n\n%s\n\n" book chapter verse text))))
     (when was-org-mode
       (org-mode))))
 
