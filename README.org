@@ -1,6 +1,7 @@
 * bible-to-org
 
-This is a fork of sword-to-org by alphapapa (original readme below this) made for my [[https://github.com/Mertzenich/bible.org][bible.org]] project. This has a slightly modified sword-to-org-insert-outline function which uses a (hardcoded, for now) substring to get the current buffer file name as well as create a better formatted org file.
+This is a fork of sword-to-org by alphapapa (original readme below this) made for my [[https://github.com/Mertzenich/bible.org][bible.org]] project. This has a slightly modified sword-to-org-insert-outline function which uses the buffer file name to insert a Bible outline.
+
 
 * sword-to-org
 

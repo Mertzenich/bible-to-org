@@ -85,7 +85,7 @@ it was active."
                              (not sword-to-org-default-module))
                          (completing-read "Module: " (sword-to-org--diatheke-get-modules))
                        sword-to-org-default-module)
-                     (substring (buffer-file-name) 44 -4)))
+                     (substring (buffer-name) nil -4)))
   (let ((was-org-mode (eq major-mode 'org-mode)))
     (when was-org-mode
       (text-mode))
